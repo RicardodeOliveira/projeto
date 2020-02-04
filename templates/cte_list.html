@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Testeeeeee</h3>
+    <ul>
+        {% for cte in ctes %}
+            <li>
+                <a href="{% url 'ctes_update' cte.id %}" >{{ cte.cliente }}</a>
+                <a href="{% url 'ctes_delete' cte.id %}" >Deletar</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'ctes_new' %}">Novo Lançamento</a>
+</body>
+</html>
