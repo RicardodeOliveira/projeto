@@ -16,8 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from cte import urls as cte_urls
+from home import urls as home_urls
+from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
+    path('', include(home_urls)),
     path('cte/', include(cte_urls)),
+    path('login/', LoginView.as_view(), name='login'),
     path('admin/', admin.site.urls),
 ]
